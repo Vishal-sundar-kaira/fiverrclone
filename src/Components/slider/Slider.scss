@@ -1,0 +1,32 @@
+h1{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+}
+.slick-arrow-custom::before {
+  font-family: 'slick';
+  font-size: 40px;
+  line-height: 1;
+  width: 27vw;
+  opacity: 3.75;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0px;
+    
+    .container {
+      width: 90vw;
+      position: relative;
+    }
+  
+    .carousel-initialized {
+      position: static;
+    }
+  
+  
+  }

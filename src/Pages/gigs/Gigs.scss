@@ -1,0 +1,12 @@
+.Gigs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .cards {
+      display: flex;
+      gap: 20px;
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+}
