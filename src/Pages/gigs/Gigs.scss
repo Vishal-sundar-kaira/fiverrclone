@@ -1,12 +1,110 @@
 .Gigs{
-    width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    align-items: start;
+    gap: 25px;
+    margin-bottom: 50px;
+    .breadcrumbs{
+      font-size: 30px;
+      color: gray;
+    }
+    .dark{
+      font-size: 40px;
+      color: black;
+      font: bolder;
+      font-weight: 800;
+    }
+    .p{
+      margin: 0px;
+      font-size: 30px;
+      color: gray;
+    }
+    .menu{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 50vw;
+      .left{
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       span{
+        font-size: 25px;
+        color: gray;
+       }
+       input{
+        width: 150px;
+        height: 25px;
+        border-radius: 5px;
+        outline: none;
+        padding: 5px;
+        cursor: pointer;
+        &::placeholder{
+          width: 50px;
+        }
+       }
+       button{
+        width: 70px;
+      height: 42px;
+      border-radius: 5px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
+       
+      }
+      .right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        .sortby{
+          font-size: 20px;
+          color: gray;
+        }
+        .bestsell{
+          font-size: 20px;
+        }
+        img{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+        .rightmenu{
+          position: absolute;
+          bottom: -75px;
+          right: 0px;
+          width: 80%;
+          padding: 10px 0px 0px 10px;
+          gap: 5px;
+          display: flex;
+          height: 60px;
+          background-color: white;
+          border: 1px solid gray;
+          flex-direction: column;
+          border-radius: 5px;
+          span{
+            cursor: pointer;
+          }
+      }
+        }
+       
+
+      }
+    }
+  }
     .cards {
       display: flex;
-      gap: 20px;
+      justify-content: space-between;
       width: 90%;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
   }
-}
