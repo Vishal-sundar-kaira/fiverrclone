@@ -1,11 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import "./Gigs.scss"
 import { gigs } from "../../data";
 import GigCard from '../../Components/gigCard/GigCard';
-import down from "../../images/down.png"
+import down from "../../images/check.png"
+
 const Gigs = () => {
   const [menu,setmenu]=useState(false)
-  const [cat,setcat]=useState()
+  const [cat,setcat]=useState("Bestselling")
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const change=(val)=>{
+    setcat(val)
+    if(menu==true){
+      setmenu(false)
+    }
+    else{
+      setmenu(true)
+    }
+  }
   const handleclick=()=>{
     if(menu==true){
       setmenu(false)
@@ -14,10 +27,13 @@ const Gigs = () => {
       setmenu(true)
     }
   }
+  useEffect(()=>{
+
+  },[menu])
   return (
     <div className='Gigs'>
       <div className="container">
-        <span className="breadcrumbs">FIVERR > GRAPHICS & DESIGN ></span>
+        <span className="breadcrumbs">FIVERR and GRAPHICS & DESIGN </span>
         <span className='dark'>AI Artists</span>
         <span className='p'>Explore the Boundaries of art and technology with Fiverr's Ai Artists</span>
         <div className="menu">
@@ -29,11 +45,11 @@ const Gigs = () => {
           </div>
           <div className="right">
             <span className='sortby'>SortBy</span>
-            <span className='bestsell'>Best Selling</span>
+            <span className='bestsell'>{cat}</span>
             <img src={down} alt="" onClick={handleclick}/>
             {menu==true?(<div className="rightmenu">
-              <span>Newest</span>
-              <span>Best Selling</span>
+              <span onClick={() => change("Newest")}>Newest</span>
+              <span onClick={() => change("BestSelling")}>Best Selling</span>
             </div>):""}
            
           </div>

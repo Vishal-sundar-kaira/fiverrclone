@@ -1,83 +1,123 @@
-import React, { useEffect, useState } from 'react'
-import "../navbar/Navbar.scss";
-import { Link, useLocation } from 'react-router-dom';
-import userimg from '../navbar/apple.jpg'
-const Navbar = () => {
-    const [active,setactive]=useState(false)
-    const [option,setoption]=useState(false)
-    const isactive=()=>{
-        window.scrollY>0?setactive(true):setactive(false)
-    }
-    useEffect(()=>{
-        window.addEventListener("scroll",isactive)
-        return ()=>{
-            window.removeEventListener("scroll",isactive)
-        }
-    },[])
-    const {pathname}=useLocation()
-    const currentUser={
-        id:1,
-        name:"vishal",
-        isSeller:true
-    }
-    const activateoption=()=>{
-        if(option===true)setoption(false)
-        else setoption(true)
-    }
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Navbar.scss";
+import gig from "../../images/gig1.jpg"
+
+function Navbar() {
+  const [active, setActive] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const { pathname } = useLocation();
+
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", isActive);
+    return () => {
+      window.removeEventListener("scroll", isActive);
+    };
+  }, []);
+
+  // const currentUser = null
+
+  const currentUser = {
+    id: 1,
+    username: "Vishal",
+    isSeller: true,
+  };
+
   return (
-    <>
-      {/* use span tag for one after other in row like specally in navbar */}
-      <div className={active|| pathname!=="/"?"navbar active":"navbar"}>
-        <div className="container">
-            <div className="logo">
-                <Link className='text' to="/"><span>fiverr</span></Link>
-                <span className='dot'>.</span>
-            </div>
-            <div className="links">
-                <span>Fiverr Business</span>
-                <span>Explore</span>
-                <span>English</span>
-                {!currentUser?.isSeller && <span>Become a seller</span>}
-                <span>Sign in</span>
-                {!currentUser &&< button className={active?"joinbut active":"joinbut"}>Join</button>}
-                {currentUser && (
-                    <div className="user">
-                        <img src={userimg} alt="" />
-                        <span onClick={activateoption}>{currentUser?.name}</span>
-                        {option&&<div className="options">
-                            {
-                                currentUser?.isSeller && (
-                                    <>
-                                    <Link to="gigs" className='links'>Gigs</Link>
-                                    <Link to="add" className='links'>Add new Gigs</Link>
-                                    </>
-                                )
-                                
-                            }
-                            <Link to="orders" className='links'>Orders</Link>
-                            <Link to="messages" className='links'>Messages</Link>
-                            <Link to="logout" className='links'>Log out</Link>
-                        </div>}
-                    </div>
-                )}
-            </div>
+    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
+      <div className="container">
+        <div className="logo">
+          <Link className="link" to="/">
+            <span className="text">fiverr</span>
+          </Link>
+          <span className="dot">.</span>
         </div>
-        
-        {active||pathname!=="/"&&(
+        <div className="links">
+          <span>Liverr Business</span>
+          <span>Explore</span>
+          <span>English</span>
+          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          {currentUser ? (
+            <div className="user" onClick={()=>setOpen(!open)}>
+              <img
+                src={gig}
+                alt=""
+              />
+              <span>{currentUser?.username}</span>
+              {open && <div className="options">
+                {currentUser.isSeller && (
+                  <>
+                    <Link className="link" to="/mygigs">
+                      Gigs
+                    </Link>
+                    <Link className="link" to="/add">
+                      Add New Gig
+                    </Link>
+                  </>
+                )}
+                <Link className="link" to="/orders">
+                  Orders
+                </Link>
+                <Link className="link" to="/messages">
+                  Messages
+                </Link>
+                <Link className="link" to="/">
+                  Logout
+                </Link>
+              </div>}
+            </div>
+          ) : (
             <>
-                <hr/>
-                <div className="menu">
-                    <span>text1</span>
-                    <span>text2</span>
-                </div>
+              <span>Sign in</span>
+              <Link className="link" to="/register">
+                <button>Join</button>
+              </Link>
             </>
-        )}
-        
-
+          )}
+        </div>
       </div>
-
-    </>
-  )
+      {(active || pathname !== "/") && (
+        <>
+          <hr />
+          <div className="menu">
+            <Link className="link menuLink" to="/">
+              Graphics & Design
+            </Link>
+            <Link className="link menuLink" to="/">
+              Video & Animation
+            </Link>
+            <Link className="link menuLink" to="/">
+              Writing & Translation
+            </Link>
+            <Link className="link menuLink" to="/">
+              AI Services
+            </Link>
+            <Link className="link menuLink" to="/">
+              Digital Marketing
+            </Link>
+            <Link className="link menuLink" to="/">
+              Music & Audio
+            </Link>
+            <Link className="link menuLink" to="/">
+              Programming & Tech
+            </Link>
+            <Link className="link menuLink" to="/">
+              Business
+            </Link>
+            <Link className="link menuLink" to="/">
+              Lifestyle
+            </Link>
+          </div>
+          <hr />
+        </>
+      )}
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;

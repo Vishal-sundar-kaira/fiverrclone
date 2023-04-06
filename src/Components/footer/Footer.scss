@@ -7,7 +7,7 @@
 .foot{
     margin-top: 50px;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,16 +30,16 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: start;
-                gap: 30px;
+                gap: 15px;
 
             }
             h2{
-                font-size: 25px;
+                font-size: 20px;
                 font: bold;
             }
             span{
                 display: block;
-                font-size: 25px;
+                font-size: 20px;
                 color: gray;
             }
         }

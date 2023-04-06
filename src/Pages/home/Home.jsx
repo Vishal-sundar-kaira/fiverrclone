@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Component,useEffect} from 'react'
 import Featured from '../../Components/featured/Featured'
 import Slider from '../../Components/slider/Slider'
 import "./Home.scss"
@@ -12,12 +12,15 @@ import "../../Components/projectCard/ProjectCard.scss"
 import graphics from "../../images/graphics.svg"
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
     <div className='Home'>
       <Featured/>
-      <h1>Popular Popular Services</h1>
-      <Slider slidesToShow={5} arrowsScroll={3}>
+      <h1>Popular Services</h1>
+      <Slider slidesToShow={4} arrowsScroll={3}>
         {cards.map((card) => (
           <CatCard key={card.id} card={card} />
         ))}
