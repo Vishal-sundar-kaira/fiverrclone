@@ -9,18 +9,22 @@ import flag from "../../images/flag.png"
 import recycle from "../../images/recycle.png"
 import clock from "../../images/clock.png"
 import checkk from "../../images/checkk.png"
-
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Gig = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
     <div className='gig'>
       <div className="gigcontainer">
         <div className="left">
-        <span className="breadcrumbs">FIVERR and GRAPHICS & DESIGN </span>
-        <h1>I will create ai generated art for you</h1>
-        <div className="name">
+        <span data-aos="fade-down" class="breadcrumbs">FIVERR and GRAPHICS & DESIGN </span>
+        <h1 data-aos="fade-left">I will create ai generated art for you</h1>
+        <div data-aos="fade-left" className="name">
           <img classname="img1" src={profile} alt="" />
           <div className="username">Anna Bell</div>
           <img className='img2' src={star} alt="" />
@@ -30,18 +34,21 @@ const Gig = () => {
           <img className='img2' src={star} alt="" />
           <h3>5</h3>
         </div>
-        <div className="imgcontain">
+        <div data-aos="fade-right" className="imgcontain">
           <img src={projimg} alt="" />
         </div>
-        <h2>About This Gig</h2>
-        <p>Hi and welcome C:
+        <h2 data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">About This Gig</h2>
+        <p data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">Hi and welcome C:
 
           I'm a professional digital artist with years of experience and I would love to help you out with your AI-generated art.
 
           I can edit any style as I'm good with copying art styles--my job literally requires it.
 
           Eyes, ears, hands, fingers, noses--all facial features and human anatomy are not an issue. But I wont limit you with humans only. I know how to paint animals and therefore how to fix possible AI flaws.</p>
-          <div className="seller">
+          <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="seller">
             <h2>About The Seller</h2>
             <div className="info2">
               <img classname="userimg" src={profile} alt="" />
@@ -60,7 +67,7 @@ const Gig = () => {
             </div>
             </div>
             {/* padding in box and container left right then para */}
-          <div className="box">
+          <div data-aos="flip-up" className="box">
             <div className="container">
               <div className="left">
                 <span classname="tag">From</span>
@@ -82,7 +89,8 @@ const Gig = () => {
               <p>I am a professional 2D artist specialising in fantasy illustration and concept art. Having a degree in the field, I worked with international game studios and TTRPG publishers for 6 years.</p>
             </div>
           </div>
-        <div className="revbox">
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="revbox">
           <h2>Reviews</h2>
           <div className="rev">
             <div className="person">
@@ -116,7 +124,8 @@ const Gig = () => {
           </div>
         </div>
         <hr />
-        <div className="revbox">
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="revbox">
           <div className="rev">
             <div className="person">
               <img src={profile} alt="" />
@@ -149,7 +158,8 @@ const Gig = () => {
           </div>
         </div>
         <hr />
-        <div className="revbox">
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="revbox">
           <div className="rev">
             <div className="person">
               <img src={profile} alt="" />
@@ -182,7 +192,7 @@ const Gig = () => {
           </div>
         </div>
         </div>
-        <div className="right">
+        <div data-aos="fade-left" className="right">
           <div className="gigrightcontainer">
             <div className="money">
               <h2>1 AI Generated image</h2>

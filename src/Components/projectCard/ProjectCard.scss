@@ -31,3 +31,13 @@
       margin: 10px;
     }
   }
+  @media (max-width:"998px") {
+    .projectCard{
+     width: 40vw;
+    } 
+   }
+   @media (max-width:"480px") {
+    .projectCard{
+     width: 88vw;
+    } 
+   }

@@ -6,14 +6,13 @@
     color: white;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 200;
     width: 100vw;
     transition: 0.5s all ease;
-  
     &.active {
       background-color: white;
       color: black;
-  
+      z-index: 200;
       button {
         background-color: white !important;
         color: #1dbf73 !important;
@@ -22,14 +21,14 @@
     }
   
     .container {
-      width: 90%;
+      width: 80%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0px;
   
       .logo {
-        font-size: 34px;
+        font-size: 2vw;
         font-weight: bold;
   
   
@@ -44,6 +43,7 @@
         gap: 24px;
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
+        font-size: 1vw;
   
         span {
           white-space: nowrap;
@@ -108,9 +108,84 @@
       width: 90%;
       padding: 10px 0px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      column-gap: 2vw;
       color: gray;
       font-weight: 300;
       font-family: "Montserrat", sans-serif;
+      z-index:-1;
     }
   }
+.resnavbar{
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  display: none;
+  .rescontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 90%;
+    gap: 28vw;
+    transition: 0.5s all ease;
+    .crumb{
+      cursor: pointer;
+    }
+    .name{
+      font-size: 6vw;
+      font-weight: 800;
+      .dot{
+        color: #1dbf73;
+      }
+    }
+    .join{
+      color: gray;
+      font-size: 5vw;
+    }
+  }
+}
+.resoptions{
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: black;
+  background-color: white;
+  justify-self: center;
+  align-items: center;
+  position: absolute;
+  display: none;
+  z-index: 999;
+  .link{
+    font-size: 5vw;
+  }
+  
+}
+  //responsive
+@media (max-width:"998px") {
+  .navbar{
+    .menu{
+      display: none;
+    }
+  }
+}
+@media (max-width:"480px") {
+  .navbar{
+    display: none;
+  }
+  .resnavbar{
+    display: block;
+  }
+  .resoptions{
+    display: flex;
+  }
+
+}

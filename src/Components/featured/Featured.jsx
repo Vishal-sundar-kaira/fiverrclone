@@ -11,8 +11,10 @@ const Featured = () => {
             <div className="text1">Find the Perfect <i>Freelance</i></div>
             <div className="text2">Service For Your Business</div>
             <div className="search">
-                <div className="searchicon"><img src={searchicon} alt="" /></div>
+              <div className="searchin">
+              <div className="searchicon"><img src={searchicon} alt="" /></div>
                 <input type="text" className="input" placeholder='Try building mobile app' ></input>
+              </div>
                 <div className="searchbtn"> Search</div>
             </div>
             <div className="popular">

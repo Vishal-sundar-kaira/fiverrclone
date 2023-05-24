@@ -2,16 +2,25 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 import gig from "../../images/gig1.jpg"
-
+import Aos from "aos"
+import { GiHamburgerMenu } from 'react-icons/gi';
+import "aos/dist/aos.css"
 function Navbar() {
+  let r=0
+  useEffect(()=>{
+    Aos.init({duration:2000});
+  },[])
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
-
+  const [responsive,setresponsive]=useState(false);
   const { pathname } = useLocation();
-
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
+  const isresponsive=()=>{
+    setresponsive((prevState) => !prevState);
+  }
+  
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
@@ -29,8 +38,9 @@ function Navbar() {
   };
 
   return (
+    <>
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
-      <div className="container">
+      <div data-aos="flip-down" className="container">
         <div className="logo">
           <Link className="link" to="/">
             <span className="text">fiverr</span>
@@ -117,7 +127,39 @@ function Navbar() {
         </>
       )}
     </div>
+    <div className="resnavbar">
+      <div className="rescontainer">
+        <div className="crumb" onClick={isresponsive}>
+          <GiHamburgerMenu style={{ fontSize: '30px' }} />
+        </div>
+        <Link to='/'>
+        <span className="name">fiverr
+        <span className="dot">.</span></span>
+        </Link>
+        <span className="join">Join</span>
+      </div>
+    </div>
+    {responsive && <div className="resoptions">
+      <hr />
+                <Link className="link" to="/orders" onClick={isresponsive}>
+                  orders
+                </Link>
+                <hr />
+                <Link className="link" to="/messages" onClick={isresponsive}>
+                  Messages
+                </Link>
+                <hr />
+                <Link className="link" to="/mygigs" onClick={isresponsive}>
+                      Gigs
+                </Link>
+                <hr />
+                <Link className="link" to="/add" onClick={isresponsive}>
+                      Add New Gig
+                </Link>
+                <hr />
+              </div>}
+    </>
   );
 }
-
+// GiHamburgerMenu
 export default Navbar;

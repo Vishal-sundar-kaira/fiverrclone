@@ -17,10 +17,11 @@
             font-family: "Mountserrat",sans-serif;
             width: 70%;
             height: 65%;
-            margin: 35px 0px 0px 100px;
+            margin: 2.3vw 0vw 0vw 2vw;
             .text1,.text2{
-                font-size: 40px;
+                font-size: 3vw;
                 margin: 5px;
+                font-weight: 500;
             }
             i{
                 font-weight: 300;
@@ -33,21 +34,25 @@
                 display: flex;
                 flex-direction: row;
                 margin:30px 0px;
-                .searchicon{
-                    width: 10%;
-                    img{
-                        width: 90%;
-                        height: 90%;
-                        cursor: pointer;
+                .searchin{
+                    display: flex;
+                    flex-direction: row;
+                    .searchicon{
+                        width: 15%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                        }
                     }
-                }
-
-                .input{
-                    width: 65%;
-                    color: black;
-                    font-size: 20px;
-                    border: none;
-                    outline: none;
+    
+                    .input{
+                        width: 65%;
+                        color: black;
+                        font-size: 1vw;
+                        border: none;
+                        outline: none;
+                    }
                 }
                 .searchbtn{
                     width: 25%;
@@ -56,6 +61,7 @@
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    font-size: 1vw;
                 }
             }
             .popular{
@@ -63,7 +69,8 @@
                 flex-direction: row;
                 margin-top: 30px;
                 height: 25%;
-                font-size: 20px;
+                font-size: 1.2vw;
+                align-items: center;
                 .p{
                     width: 150px;
                     height: 40px;
@@ -71,7 +78,7 @@
                     border: 2px solid white;
                     border-radius: 10px;
                     margin: 0px 10px;
-                    font-size: 15px;
+                    font-size: 1vw;
                     background-color: transparent;
                     cursor: pointer;
                 }
@@ -99,6 +106,84 @@
     align-items: center;
     color: rgb(184, 178, 178);
     h2{
-        margin: 0px 20px;
+        margin: 0px 1vw;
+        font-size: 2vw;
+    }
+}
+@media (max-width:"998px") {
+    .main{
+        height: 40vh;
+        .left{
+            width: 100%;
+            .lefttext{
+                .search{
+                    height: 21%;
+                    .searchin{
+                        height: 50px;
+                        width: 80%;
+                        .searchicon{
+                            width: 15%;
+                            height: 100%;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .searchbtn{
+                        height: 50px;
+                    }
+                }
+            }
+        }
+        .right{
+            display: none;
+        }
+    }
+}
+@media (max-width:"480px") {
+    .main{
+        .left{
+           background-color: #000000;
+            .lefttext{
+                width: 80%;
+                .text1,.text2{
+                    font-size: 6vw;
+                }
+                .search{
+                    height: 50%;
+                    background-color: #000000;
+                    flex-direction: column;
+                    .searchin{
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        height: 60px;
+                        width: 100%;
+                        .input{
+                            height: 45%;
+                            font-size: 4vw;
+                            width: 80%;
+                        }
+                    }
+                    .searchbtn{
+                        height: 60px;
+                        font-size: 5vw;
+                        margin: 5px 0px;
+                        width: 100%;
+                    }
+
+                }
+                .popular{
+                    display: none;
+                }
+            }
+        }
+    }
+    .trust{
+        h2{
+            font-size: 3vw;
+        }
     }
 }

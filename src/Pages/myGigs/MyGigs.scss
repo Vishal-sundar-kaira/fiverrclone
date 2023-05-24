@@ -63,3 +63,39 @@
         }
     }
 }
+//responsive
+@media (max-width:"998px") {
+    .MyGigs{
+        .container{
+            width: 100%;
+            gap: 15px;
+            .title{
+                margin: 0;
+                gap: 40vw;
+                align-items: center;
+                h1{
+                    font-size: 6vw;
+                }
+                button{
+                    width: 15vw;
+                    height: 20px;
+                    font-size: 2vw;
+                }
+            }
+            table{
+                tr{
+                    th{
+                        font-size: 5vw;
+                    }
+                    td{
+                        img{
+                            width: 4vw;
+                            height: 4vw;
+                        }
+                        font-size: 4vw;
+                    }
+                }
+            }
+        }
+    }
+}

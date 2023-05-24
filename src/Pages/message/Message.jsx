@@ -3,49 +3,53 @@ import "./Message.scss"
 import { Link } from 'react-router-dom'
 import profile from "../../images/profile.webp"
 import projimg from "../../images/projimg.webp"
-
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Message = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
     <div className='Message'>
       <div className="container">
-        <span className="breadcrumbs">
-          <Link to="/messages">MESSAGES</Link>>Vishal Kaira>
+        <span data-aos="fade-right" className="breadcrumbs">
+          <Link to="/messages">MESSAGES</Link> Vishal Kaira
         </span>
         <div className="messages">
-          <div className="mess">
+          <div data-aos="fade-right" className="mess">
             <img src={profile} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>
             </div>
           </div>
-          <div className="mess owner">
+          <div data-aos="fade-left" className="mess owner">
             <img src={projimg} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>
             </div>
           </div>
-          <div className="mess">
+          <div data-aos="fade-right" className="mess">
             <img src={profile} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>
             </div>
           </div>
-          <div className="mess owner">
+          <div data-aos="fade-left" className="mess owner">
             <img src={projimg} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>
             </div>
           </div>
-          <div className="mess">
+          <div data-aos="fade-right" className="mess">
             <img src={profile} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>
             </div>
           </div>
-          <div className="mess owner">
+          <div data-aos="fade-left" className="mess owner">
             <img src={projimg} alt="" />
             <div className="chat">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque omnis minima, quo est nihil. Explicabo adipisci provident voluptates hic incidunt et mollitia placeat. Deserunt eum impedit doloremque modi cupiditate.</p>

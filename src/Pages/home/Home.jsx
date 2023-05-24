@@ -2,32 +2,36 @@ import React,{Component,useEffect} from 'react'
 import Featured from '../../Components/featured/Featured'
 import Slider from '../../Components/slider/Slider'
 import "./Home.scss"
-import CatCard from "../../components/catCard/CatCard";
+import CatCard from "../../Components/catCard/catCard";
 import { cards, projects } from "../../data";
 import check from "../../images/check.png"
 import video from "../../images/video.webp"
 import newimg from "../../images/newimg.webp"
-import ProjectCard from "../../components/projectCard/ProjectCard";
+import ProjectCard from "../../Components/projectCard/ProjectCard";
 import "../../Components/projectCard/ProjectCard.scss"
 import graphics from "../../images/graphics.svg"
-
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
     <>
     <div className='Home'>
       <Featured/>
       <h1>Popular Services</h1>
-      <Slider slidesToShow={4} arrowsScroll={3}>
+      <Slider slidesToShow={4} arrowsScroll={2}>
         {cards.map((card) => (
           <CatCard key={card.id} card={card} />
         ))}
       </Slider>
       <div className="features">
-        <div className="container">
-          <div className="left">
+        <div  className="container">
+          <div data-aos="fade-up-right" className="left">
             <div className="text">
               <h1>A Whole world of Freelance talent at your fingertips</h1>
               <div className="head">
@@ -52,55 +56,53 @@ const Home = () => {
               <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
             </div>
           </div>
-          <div className="right">
+          <div data-aos="fade-up-left" className="right">
             <img src={video} alt="" />
           </div>
         </div>
       </div>
       
       <div className="explore">
-        <div className="explorecontainer">
+        <div  className="explorecontainer">
         <h1>Explore The Marketplace </h1>
           <div className="row">
-            <div className="skill">
+            <div data-aos="zoom-out" data-aos-offset="200" className="skill">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div data-aos="zoom-out" data-aos-offset="300" className="skill">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div data-aos="zoom-out" data-aos-offset="200" className="skill">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div data-aos="zoom-out" data-aos-offset="200" className="skill">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div data-aos="zoom-out" data-aos-offset="200" className="skill">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-          </div>
-          <div className="row">
-          <div className="skill">
+            <div className="skill" data-aos="zoom-out" data-aos-offset="200">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div className="skill" data-aos="zoom-out" data-aos-offset="200">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div className="skill" data-aos="zoom-out" data-aos-offset="200">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div className="skill" data-aos="zoom-out" data-aos-offset="200">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
-            <div className="skill">
+            <div className="skill" data-aos="zoom-out" data-aos-offset="200">
               <img src={graphics} alt="" />
               <h2>Graphics & Design</h2>
             </div>
@@ -109,7 +111,7 @@ const Home = () => {
       </div>
       <div className="features new">
         <div className="container">
-          <div className="left">
+          <div data-aos="fade-up-right"  className="left">
             <div className="text">
               <h1>fiverr<span> business</span> </h1> 
               <h2>A business solution designed for <span>teams</span> </h2>
@@ -129,7 +131,7 @@ const Home = () => {
               <button className="button">Explore fiverr Business</button>
             </div>
           </div>
-          <div className="right">
+          <div data-aos="fade-up-left"  className="right">
             <img src={newimg} alt=""/>
           </div>
         </div>

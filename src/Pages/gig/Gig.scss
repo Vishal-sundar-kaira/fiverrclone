@@ -67,19 +67,19 @@
                 padding: 0;
                 color: gray;
                 font-weight: 400;
-                font-size: 20px;
-                height: 25vh;
+                font-size: 1.2vw;
+                height: fit-content;
             }
             .seller{
                 width: 100%;
-                height: 20vh;
+                height: fit-content;
                 display: flex;
                 justify-content: start;
                 flex-direction: column;
                 gap: 10px;
                 margin: 30px 0;
                 h2{
-                    font-size: 20px;
+                    font-size: 1.5vw;
                     margin: 0;
                     padding: 0;
                     color: black;
@@ -88,10 +88,10 @@
                     display: flex;
                     flex-direction: row;
                     margin: 10px;
-                    gap: 20px;
+                    gap: 2vw;
                     img{
-                        width: 80px;
-                        height: 80px;
+                        width: 5vw;
+                        height: 5vw;
                         border-radius: 50%;
                     }
                     .name2{
@@ -100,7 +100,7 @@
                         gap: 5px;
                         align-items: start;
                         h3{
-                            font-size: 20px;
+                            font-size: 1vw;
                             margin: 0;
                             padding: 0;
 
@@ -132,7 +132,7 @@
             }
             .box{
                 width: 90%;
-                height: 40vh;
+                height: fit-content;
                 border: 1px solid gray;
                 display: flex;
                 flex-direction: column;
@@ -148,6 +148,7 @@
                         flex-direction: column;
                         width: 50%;
                         gap: 5px;
+                        height: fit-content;
                         .ans{
                             font-size:20px;
                             font-weight: 800;
@@ -163,6 +164,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
+                        height: fit-content;
                         .ans{
                             font-size:20px;
                             font-weight: 800;
@@ -185,11 +187,12 @@
             }
             .revbox{
                 width:90%;
-                height: 55vh;
+                height: fit-content;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 10px;
+                margin: 20px 0px;
                 h2{
                     margin-top:20px;
                     padding: 0px;
@@ -207,8 +210,8 @@
                         flex-direction: row;
                         gap: 5px;
                         img{
-                            width: 50px;
-                            height: 50px;
+                            width: 4vw;
+                            height: 4vw;
                             border-radius: 50%;
                         }
                         .nameloc{
@@ -218,18 +221,18 @@
                             h3{
                                 margin: 0;
                                 padding: 0;
-                                font-size: 20px;
+                                font-size: 1vw;
 
                             }
                             .country{
                                 display: flex;
                                 flex-direction: row;
-                                gap: 2px;
+                                gap: 10px;
                                 justify-content: center;
                                 align-items: center;
                                 img{
-                                    width: 15px;
-                                    height: 15px;
+                                    width: 1.2vw;
+                                    height: 1.2vw;
                                     border-radius: 0;
                                 }
                                 h3{
@@ -247,19 +250,19 @@
                         gap: 2px;
                         align-items: center;
                         img{
-                            width: 10px;
-                            height: 10px;
+                            width: 1vw;
+                            height: 1vw;
                         }
                         h3{
                             margin: 0;
                             padding: 0;
-                            font-size: 15px;
+                            font-size: 1vw;
                             color: gold;
                             margin-left: 10px;
                         }
                     }
                     .reviewpara{
-                        font-size: 20px;
+                        font-size: 1.2vw;
                         color: gray;
                     }
                     .helpful{
@@ -296,18 +299,19 @@
             width: 35vw;
             display: flex;
             align-items: start;
-            height: 60vh;
+            height: 50vh;
             margin-top: 20px;
             position: sticky;
             top: 150px;
+
             .gigrightcontainer{
                 width: 90%;
                 height: 90%;
                 display: flex;
                 flex-direction: column;
                 border: 1px gray solid;
-                gap: 20px;
-                padding: 20px;
+                gap: 1vw;
+                padding: 2vw;
                 .money{
                     display: flex;
                     flex-direction: row;
@@ -317,7 +321,7 @@
                 p{
                     padding: 0px;
                     margin: 10px 0px;
-                    font-size: 15px;
+                    font-size: 1vw;
                 }
                 .days{
                     display: flex;
@@ -327,17 +331,19 @@
                     .leftdays{
                         display: flex;
                         flex-direction: row;
+                        align-items: center;
                         img{
-                            width: 20px;
-                            height: 20px;
+                            width: 1vw;
+                            height: 1vw;
                         }
                     }
                     .rightdays{
                         display: flex;
                         flex-direction: row;
+                        align-items: center;
                         img{
-                            width: 20px;
-                            height: 20px;
+                            width: 1vw;
+                            height: 1vw;
                         }
                     }
                 }
@@ -348,11 +354,11 @@
                         display: flex;
                         flex-direction: row;
                         img{
-                            width: 20px;
-                            height: 20px;
+                            width: 1.5vw;
+                            height: 1.5vw;
                         }
                         h3{
-                            font-size: 15px;
+                            font-size: 1vw;
                             font-weight: 500;
                             color: gray;
                         }
@@ -363,7 +369,107 @@
                     height: 40px;
                     background-color: rgb(4, 172, 4);
                     border: none;
+                    color: white;
                     cursor: pointer;
+                }
+            }
+        }
+    }
+}
+//responsive
+@media (max-width:"998px") {
+    .gig{
+        .gigcontainer{
+            width: 95vw;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .left{
+                width: 100%;
+                .name{
+                    .img1{
+                        height: 3vw;
+                        width: 3vw;
+                    }
+                }
+                .imgcontain{
+                    width: 100%;
+                    height: 50vh;
+                }
+                p{
+                    font-size: 3vw;
+                }
+                .seller{
+                    h2{
+                        font-size: 5vw;
+                    }
+                    .info2{
+                        img{
+                            width: 8vw;
+                            height: 8vw;
+                        }
+                        .name2{
+                            h3{
+                                font-size: 4vw;
+                            }
+                        }
+                    }
+
+                }
+                .revbox{
+                    .rev{
+                        .person{
+                            img{
+                                width: 8vw;
+                                height: 8vw;
+                            }
+                            .nameloc{
+                                h3{
+                                    font-size: 4vw;
+                                }
+                                .country{
+                                    img{
+                                        width: 4vw;
+                                        height: 4vw;
+                                    }
+                                    h3{
+                                        font-size: 4vw;
+                                    }
+                                }
+                            }
+                        }
+                        .stars{
+                            img{
+                                width: 3vw;
+                                height: 3vw;
+                            }
+                        }
+                        .reviewpara{
+                            font-size: 4vw;
+                        }
+                    }
+                }
+            }
+            .right{
+                width: 98vw;
+                height: fit-content;
+                margin: 20px 0px;
+                .gigrightcontainer{
+                    width: 100%;
+                    p{
+                        font-size: 3vw;
+                    }
+                    .work{
+                        .line{
+                            img{
+                                width: 4vw;
+                                height: 4vw;
+                            }
+                            h3{
+                                font-size: 4vw;
+                            }
+                        }
+                    }
                 }
             }
         }

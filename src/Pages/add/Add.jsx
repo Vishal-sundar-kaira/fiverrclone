@@ -1,15 +1,20 @@
 import React, { useState,useEffect } from 'react'
 import "./Add.scss"
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Add = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
     <div className='add'>
       <div className="container">
-      <h1>Add New Gig</h1>
+      <h1 data-aos="zoom-in-down">Add New Gig</h1>
       <div className="section">
-        <div className="left">
+        <div data-aos="fade-right" className="left">
           <label htmlFor="">Title</label>
           <input type="text" placeholder='e.g.I will do something Im really good at'/>
           <label htmlFor="">Category</label>
@@ -27,7 +32,7 @@ const Add = () => {
           <textarea name="description" id="description" cols="30" rows="10"></textarea>
           <button>Create</button>
         </div>
-        <div className="right">
+        <div data-aos="fade-left"  className="right">
           <label htmlFor="">Service Title</label>
           <input type="text" placeholder='eg.One-page web design' />
           <label htmlFor="">Short Description</label>
@@ -44,6 +49,7 @@ const Add = () => {
           <input type="number" />
         </div>
       </div>
+      <button className='resbutton'>Create</button>
       </div>
     </div>
   )

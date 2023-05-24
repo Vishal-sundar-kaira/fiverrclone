@@ -95,3 +95,31 @@
         }
     }
 }
+@media (max-width:"998px") {
+    .foot{
+        height: 20vh;
+        .midfoot{
+            display: none;
+        }
+        .copyright{
+            hr{
+                display: none;
+            }
+            .copycontainer{
+                flex-direction: column;
+                .content{
+                    width: 100%;
+                    justify-content: center;
+                }
+                .symbols{
+                    width: 100%;
+                    justify-content: center;
+                    img{
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+    }
+  
+  }

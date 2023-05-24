@@ -3,6 +3,8 @@ import "./Orders.scss"
 import { Link } from 'react-router-dom'
 import message from "../../images/message.png"
 import flag from "../../images/flag.png"
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Orders = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,21 +14,24 @@ const Orders = () => {
     name:"vishal",
     isSeller:true
 }
+useEffect(()=>{
+  Aos.init({duration:2000});
+},[])
   return (
     <div className='Orders'>
       <div className="container">
-        <div className="title">
+        <div data-aos="fade-down" className="title">
           <h1>Orders</h1>
         </div>
         <table>
-          <tr>
+          <tr data-aos="fade-down">
             <th>Image</th>
             <th>Title</th>
             <th>Price</th>
             <th>{currentUser?.isSeller?"Seller":"Buyer"}</th>
             <th>Contact</th>
           </tr>
-          <tr>
+          <tr data-aos="flip-up">
             <td>
               <img className='image' src={flag} alt="" />
             </td>
@@ -36,7 +41,7 @@ const Orders = () => {
             <td><img src={message} alt="" /></td>
             {/* delete */}
           </tr>
-          <tr>
+          <tr data-aos="flip-up">
             <td>
               <img className='image' src={flag} alt="" />
             </td>
@@ -46,7 +51,7 @@ const Orders = () => {
             <td><img src={message} alt="" /></td>
             {/* delete */}
           </tr>
-          <tr>
+          <tr data-aos="flip-up">
             <td>
               <img className='image' src={flag} alt="" />
             </td>
@@ -56,7 +61,7 @@ const Orders = () => {
             <td><img src={message} alt="" /></td>
             {/* delete */}
           </tr>
-          <tr>
+          <tr data-aos="flip-up">
             <td>
               <img className='image' src={flag} alt="" />
             </td>
@@ -66,7 +71,7 @@ const Orders = () => {
             <td><img src={message} alt="" /></td>
             {/* delete */}
           </tr>
-          <tr>
+          <tr data-aos="flip-up">
             <td>
               <img className='image' src={flag} alt="" />
             </td>

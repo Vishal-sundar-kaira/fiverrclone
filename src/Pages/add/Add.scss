@@ -9,6 +9,9 @@
         justify-content: start;
         align-items: start;
         padding-left: 10px;
+        .resbutton{
+            display: none;
+        }
         h1{
             font-size: 30px;
         }
@@ -64,5 +67,34 @@
                 }
             }
          }
+    }
+}
+@media (max-width:"998px") {
+    .add{
+        .container{
+            .section{
+                flex-direction: column;
+                .left{
+                    width: 85%;
+                    button{
+                        display: none;
+                    }
+                }
+                .right{
+                    width: 85%;
+                }
+            }
+            .resbutton{
+                display: block;
+                width: 100px;
+                height: 40px;
+                font-size: 20px;
+                color: white;
+                background-color: rgb(4, 172, 4);
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+            }
+        }
     }
 }
